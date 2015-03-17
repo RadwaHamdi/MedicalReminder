@@ -77,17 +77,7 @@ public class SignUpActivity extends Activity {
 			}
 		});
 	}
-	@Override
-	protected void onRestart() {
-		// TODO Auto-generated method stub
-	//	super.onRestart();
-		try {
-			finalize();
-		} catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 
 	class SignUpTask extends AsyncTask<String, Void, Integer> {
 
@@ -136,6 +126,7 @@ public class SignUpActivity extends Activity {
 			if (result == 1){//login successfull
 				Intent intent1 = new Intent(SignUpActivity.this, HomeActivity.class);
 				startActivity(intent1);
+				SignUpActivity.this.finish();
 				message = "Signed up successfully";
 			}
 				

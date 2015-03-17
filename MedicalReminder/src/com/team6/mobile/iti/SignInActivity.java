@@ -84,17 +84,7 @@ public class SignInActivity extends Activity {
 		});
 	}
 	
-	@Override
-	protected void onRestart() {
-		// TODO Auto-generated method stub
-	//	super.onRestart();
-		try {
-			finalize();
-		} catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 
 	class LoginTask extends AsyncTask<String, Void, Integer> {
 
@@ -146,6 +136,8 @@ public class SignInActivity extends Activity {
 				//login successfull
 				Intent intent1 = new Intent(SignInActivity.this, HomeActivity.class);
 				startActivity(intent1);
+				SignInActivity.this.finish();
+
 			}
 				
 			else { if (result == 2)

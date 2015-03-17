@@ -205,13 +205,9 @@ public void function2(int id){
 @Override
 public void onBackPressed() {
 	// TODO Auto-generated method stub
-//	super.onBackPressed();
-	try {
-		this.finalize();
-	} catch (Throwable e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+	super.onBackPressed();
+	
+	
 	
 }
 public class SyncWithServer extends AsyncTask<Medicine, Void, Integer> {
