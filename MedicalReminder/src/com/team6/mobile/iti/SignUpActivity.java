@@ -36,6 +36,18 @@ public class SignUpActivity extends Activity {
 	SharedPreferences sharedPreferences;
 	SharedPreferences.Editor editor;
 	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		 sharedPreferences = getSharedPreferences("shared",MODE_PRIVATE);
+		    if(!sharedPreferences.getString("emailUser", "default").equals("default")){
+		    	Intent homeIntent = new Intent(this,HomeActivity.class);
+		    	startActivity(homeIntent);
+		    	SignUpActivity.this.finish();
+		    }
+		
+	}
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sign_up);
@@ -48,6 +60,7 @@ public class SignUpActivity extends Activity {
 	    if(!sharedPreferences.getString("emailUser", "default").equals("default")){
 	    	Intent homeIntent = new Intent(this,HomeActivity.class);
 	    	startActivity(homeIntent);
+	    	SignUpActivity.this.finish();
 	    }
 		btnSignUp.setOnClickListener(new View.OnClickListener() {	
 			@Override
@@ -126,8 +139,8 @@ public class SignUpActivity extends Activity {
 			if (result == 1){//login successfull
 				Intent intent1 = new Intent(SignUpActivity.this, HomeActivity.class);
 				startActivity(intent1);
-				SignUpActivity.this.finish();
 				message = "Signed up successfully";
+				SignUpActivity.this.finish();
 			}
 				
 			else  if (result == 2)

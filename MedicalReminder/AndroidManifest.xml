@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    
     <!-- Accessing camera hardware -->
     <uses-feature android:name="android.hardware.camera" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -35,8 +34,8 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".SignInActivity"
-            android:label="@string/signin"
+            android:name="com.team6.mobile.iti.SignInActivity"
+            android:label="@string/app_name"
             android:theme="@style/addMedicineStyle"
             android:screenOrientation="portrait"  >
              <intent-filter>

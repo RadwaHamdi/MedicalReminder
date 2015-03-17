@@ -84,6 +84,7 @@ public class HomeActivity extends Activity implements  OnItemClickListener{
         rowItems = new ArrayList<RowItem>();
         for (int i = 0; i < allMedecines.size(); i++) {
         	 RowItem item = new RowItem(R.drawable.antivirus, allMedecines.get(i).getName(), allMedecines.get(i).getType());
+
         //	 item.setMedId(allMedecines.get();
              rowItems.add(item);
         }
@@ -201,15 +202,6 @@ public void function2(int id){
 	//delete code and reload the list
 }
 
-// override on back pessed
-@Override
-public void onBackPressed() {
-	// TODO Auto-generated method stub
-	super.onBackPressed();
-	
-	
-	
-}
 public class SyncWithServer extends AsyncTask<Medicine, Void, Integer> {
 	private static final int SYNC_SUCESS = 1;
 	//private static final int INVALIED_EMAIL_OR_PASSWORD = 2;
